@@ -1,0 +1,51 @@
+SQL actors details (Jaivignesh.T)(21EE303)
+
+
+code::>
+
+CREATE TABLE actors(ID,NAME varchar(50),AGE INT,MOVIE varchar(50));                                                            
+INSERT INTO actors VALUES(1, 'Robert Downey', '58', 'Avengers');
+INSERT INTO actors VALUES(2, 'Vin Diesel', '55', 'Fast and Furious');
+INSERT INTO actors VALUES(3, 'Johnny Depp', '60','Pirates of the Caribbean');
+INSERT INTO actors VALUES(4, 'Elizabeth Olson', '34', 'Wanta Vision');
+INSERT INTO actors VALUES(5, 'Chris Hemsworth', '39', 'Thor');
+INSERT INTO actors VALUES(6, 'Chris Evans', '42', 'Captain America');
+INSERT INTO actors VALUES(7, 'Elsa Pataky', '46', 'Fast Five');
+INSERT INTO actors VALUES(8, 'Emma Stone', '34', 'Spider Man');
+INSERT INTO actors VALUES(9, 'Dwayne Johnson', '51', 'Red Notice');
+INSERT INTO actors VALUES(10, 'Ryan Reynolds', '46', 'Deadpool');
+SELECT NAME FROM actors;
+ALTER TABLE actors ADD COLUMN additional_information varchar(100);
+UPDATE actors SET additional_information = 'johnnydepp.a@example.com' WHERE ID=3;
+SELECT MOVIE FROM actors WHERE ID in (7,8);
+SELECT * FROM actors WHERE NAME IN ('Johnny Depp');
+UPDATE actors SET additional_information = 'Alameda County' WHERE ID=2;
+UPDATE actors SET additional_information = 'Primetime Emmy Award' WHERE ID=4;
+SELECT ADDITIONAL_INFORMATION FROM actors WHERE NAME IN ('Vin Diesel','Elizabeth Olson');
+UPDATE actors SET additional_information = '$800 Million' WHERE ID=9;
+UPDATE actors SET additional_information = '$350 Million' WHERE ID=10;
+SELECT ADDITIONAL_INFORMATION FROM actors WHERE NAME IN ('Dwayne Johnson','Ryan Reynolds')
+
+
+
+output::>
+
+Robert Downey
+Vin Diesel
+Johnny Depp
+Elizabeth Olson
+Chris Hemsworth
+Chris Evans
+Elsa Pataky
+Emma Stone
+Dwayne Johnson
+Ryan Reynolds
+Fast Five
+Spider Man
+3|Johnny Depp|60|Pirates of the Caribbean|johnnydepp.a@example.com
+Alameda County
+Primetime Emmy Award
+$800 Million
+$350 Million
+
+
